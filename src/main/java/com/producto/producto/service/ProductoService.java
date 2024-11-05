@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface ProductoService {
     List<Producto> productos();
-    Producto producto(BigInteger id);
+    Optional<Producto> producto(BigInteger id);
 
     Producto saveProducto(Producto producto);
 }

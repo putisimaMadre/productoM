@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import java.math.BigInteger;
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class ProductoController {
@@ -15,12 +17,12 @@ public class ProductoController {
     private ProductoService productoService;
 
     @GetMapping("/productos")
-    public ResponseEntity<?> productos(){
-        return ResponseEntity.ok(productoService.productos());
+    public List<Producto> productos(){
+        return productoService.productos();
     }
 
     @GetMapping("/{id}")
-    public Producto producto(@PathVariable BigInteger id){
+    public Optional<Producto> producto(@PathVariable BigInteger id){
         /*if (productoService.producto(id).isPresent()){
             return ResponseEntity.ok(productoService.producto(id));
         }*/

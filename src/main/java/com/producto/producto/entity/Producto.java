@@ -19,6 +19,16 @@ public class Producto {
     @Basic
     @Column(name = "PRECIO")
     private Double precio;
+    @Transient
+    private int port;
+
+    public int getPort() {
+        return port;
+    }
+
+    public void setPort(int port) {
+        this.port = port;
+    }
 
     public BigInteger getId() {
         return id;
